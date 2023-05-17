@@ -36,12 +36,18 @@ The dataset contains the following variables:
 In this project, we employed a combination of data preprocessing, feature engineering, and machine learning techniques to predict track popularity. The following steps were taken:
 
 1. Data Exploration: We analyzed the provided dataset to understand its structure, variables, and potential correlations. We observed that the dataset contains information about music tracks, including track names, genres, artists, and popularity ratings.
-![heatmap](https://github.com/giacolle6/770271/assets/127773034/0df74c71-eb9b-4230-bf7b-a78faab5a165)
+![correlation_before_merge](https://github.com/giacolle6/770271/assets/127773034/08192f87-622c-443b-a35d-609c94353294)
+![correlation_after_merge](https://github.com/giacolle6/770271/assets/127773034/396fe8f5-b608-4d44-959e-601b46f1f153)
+![correlation_heatmap](https://github.com/giacolle6/770271/assets/127773034/0a62034b-76a6-46bb-8187-06042aaf939b)
+
 2. Data Cleaning: We performed data cleaning to ensure the integrity and quality of the dataset. We removed any missing or irrelevant data points and handled duplicates. By cleaning the data, we ensured that our models are trained on reliable and accurate information.
 
 3. Feature Engineering: To enhance the predictive power of our models, we created additional features based on domain knowledge and statistical analysis. For example, we converted the track popularity variable into a binary variable, indicating whether a track is popular or not. We also derived artist popularity bins by grouping artists based on their average popularity ratings.
 
-4. Encoding: We encoded categorical variables, such as track genre and artist name, using appropriate methods to represent them numerically for machine learning algorithms. We used one-hot encoding to convert categorical variables into binary features, allowing our models to effectively utilize this information.
+4. Encoding: We employed various encoding techniques to represent categorical variables, such as track genre and artist name, in a suitable numerical format for machine learning algorithms. For track genre, we utilized one-hot encoding to convert the categorical variable into binary features, enabling our models to effectively leverage this information. Additionally, we performed a grouping operation on artist names based on their average popularity. This allowed us to categorize artists into four distinct groups: high, medium, low, and poor, providing a coherent representation of their popularity levels within the dataset.
+![genre_histogram](https://github.com/giacolle6/770271/assets/127773034/5a0820b8-3361-4381-b34d-2669f411c522)
+
+![artist_popularity_histogram](https://github.com/giacolle6/770271/assets/127773034/fb5ede2c-bb6b-4bdb-9eb4-22c1377ae32e)
 
 5. Feature Scaling: To ensure unbiased influence during the model training process, we performed feature scaling on the numerical features. We applied standardization to scale the numerical features to a common range, enabling fair comparisons and preventing any single feature from dominating the model.
 
@@ -58,27 +64,23 @@ To recreate the environment for this project, please follow these steps:
 
 ### Flowchart
 
-graph TD
-    Start --> DataCleaning[Data Cleaning]
-    DataCleaning --> RemoveDuplicates[Remove duplicates]
-    DataCleaning --> HandleMissingValues[Handle missing values]
-    DataCleaning --> FeatureEngineering[Feature Engineering]
-    FeatureEngineering --> ExtractFeatures[Extract useful features]
-    FeatureEngineering --> CreateNewFeatures[Create new features]
-    FeatureEngineering --> DataEncoding[Data Encoding]
-    DataEncoding --> OneHotEncoding[Perform one-hot encoding]
-    DataEncoding --> StandardizeNumericalFeatures[Standardize numerical features]
-    DataEncoding --> ModelTraining[Model Training]
-    ModelTraining --> NeuralNetworkModel[Utilize a neural network model]
-    ModelTraining --> KFoldCrossValidation[Implement k-fold cross-validation]
-    ModelTraining --> ModelTuning[Model Tuning]
-    ModelTuning --> Hyperparameters[Experiment with different hyperparameters]
-    ModelTuning --> ModelArchitectures[Explore different model architectures]
-    ModelTuning --> ModelEvaluation[Model Evaluation]
-    ModelEvaluation --> MSE[Calculate Mean Squared Error (MSE)]
-    ModelEvaluation --> R2Score[Calculate R2 score]
-    ModelEvaluation --> Conclusions[Conclusions]
-    Conclusions --> End
+Start --> DataCleaning[Data Cleaning]
+RemoveDuplicates[Remove duplicates] --> DataCleaning
+HandleMissingValues[Handle missing values] --> DataCleaning
+FeatureEngineering[Feature Engineering] --> DataCleaning
+ExtractFeatures[Extract useful features] --> FeatureEngineering
+CreateNewFeatures[Create new features] --> FeatureEngineering
+DataEncoding[Data Encoding] --> FeatureEngineering
+OneHotEncoding[Perform one-hot encoding] --> DataEncoding
+StandardizeNumericalFeatures[Standardize numerical features] --> DataEncoding
+ModelTraining[Model Training] --> DataEncoding
+NeuralNetworkModel[Utilize a neural network model] --> ModelTraining
+KFoldCrossValidation[Implement k-fold cross-validation] --> ModelTraining
+ModelTuning[Model Tuning] --> ModelTraining
+Hyperparameters[Experiment with different hyperparameters] --> ModelTuning
+ModelArchitectures[Explore different model architectures] --> ModelTuning
+ModelEvaluation[Model Evaluation] --> ModelTuning
+MSE[Calculate Mean Squared Error (MSE)] --> ModelEvaluation
 
 ## Experimental Design
 
@@ -95,8 +97,8 @@ For both experiments, we used the MSE and R2 score as our evaluation metrics.
 ## Results
 Our final model achieved an average MSE of 119.58 and an R2 score of 0.59 across all folds of the k-fold cross-validation. This indicates that our model is able to predict the popularity of tracks with moderate accuracy. Our experiments showed that feature engineering significantly improved the performance of the model compared to the baseline.
 
-### Placeholder Figure or Table
-Include at least one placeholder figure and/or table for communicating your findings. All the figures containing results should be generated from the code.
+![cross_validation_results](https://github.com/giacolle6/770271/assets/127773034/dc4f60fd-1cbb-4042-8113-1914d7fe4550)
+
 
 ## Conclusions
 In conclusion, our project aimed to predict the popularity of songs on Spotify using a neural network model. We began by cleaning the data, handling missing values and removing duplicates. Then, we engineered features such as genre and average artist popularity. We encoded the data and trained the model using Keras and TensorFlow. Our evaluation metrics indicated that the model performed well. The mean squared error and R2 score were both low, indicating that the model accurately predicted song popularity.
