@@ -58,8 +58,27 @@ To recreate the environment for this project, please follow these steps:
 
 ### Flowchart
 
-Insert the flowchart here
-
+graph TD
+    Start --> DataCleaning[Data Cleaning]
+    DataCleaning --> RemoveDuplicates[Remove duplicates]
+    DataCleaning --> HandleMissingValues[Handle missing values]
+    DataCleaning --> FeatureEngineering[Feature Engineering]
+    FeatureEngineering --> ExtractFeatures[Extract useful features]
+    FeatureEngineering --> CreateNewFeatures[Create new features]
+    FeatureEngineering --> DataEncoding[Data Encoding]
+    DataEncoding --> OneHotEncoding[Perform one-hot encoding]
+    DataEncoding --> StandardizeNumericalFeatures[Standardize numerical features]
+    DataEncoding --> ModelTraining[Model Training]
+    ModelTraining --> NeuralNetworkModel[Utilize a neural network model]
+    ModelTraining --> KFoldCrossValidation[Implement k-fold cross-validation]
+    ModelTraining --> ModelTuning[Model Tuning]
+    ModelTuning --> Hyperparameters[Experiment with different hyperparameters]
+    ModelTuning --> ModelArchitectures[Explore different model architectures]
+    ModelTuning --> ModelEvaluation[Model Evaluation]
+    ModelEvaluation --> MSE[Calculate Mean Squared Error (MSE)]
+    ModelEvaluation --> R2Score[Calculate R2 score]
+    ModelEvaluation --> Conclusions[Conclusions]
+    Conclusions --> End
 
 ## Experimental Design
 
