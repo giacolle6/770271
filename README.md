@@ -57,34 +57,32 @@ To recreate the environment for this project, please follow these steps:
 3. Run the code in the provided Python script, ensuring that the necessary dependencies and environment settings are met.
 
 ### Flowchart
-                 ```flowchart
-Start
-Data Cleaning
-- Remove duplicates
-- Handle missing values
 
-Feature Engineering
-- Extract useful features (e.g., genre, artist name)
-- Create new features (e.g., average artist popularity)
+flowchart
+st=>start: Start
+dc=>operation: Data Cleaning
+remove_dup=>subroutine: Remove duplicates
+handle_missing=>subroutine: Handle missing values
+fe=>operation: Feature Engineering
+extract=>subroutine: Extract useful features (e.g., genre, artist name)
+create=>subroutine: Create new features (e.g., average artist popularity)
+de=>operation: Data Encoding
+one_hot=>subroutine: Perform one-hot encoding for categorical variables
+standardize=>subroutine: Standardize numerical features
+mt=>operation: Model Training
+nn=>subroutine: Utilize a neural network model with Keras and TensorFlow
+k_fold=>subroutine: Implement k-fold cross-validation for robust training
+mtune=>operation: Model Tuning
+hyperparams=>subroutine: Experiment with different hyperparameters (e.g., learning rate, number of hidden layers)
+architectures=>subroutine: Explore different model architectures (e.g., number of neurons per layer)
+meval=>operation: Model Evaluation
+mse=>subroutine: Calculate Mean Squared Error (MSE) to assess prediction accuracy
+r2=>subroutine: Calculate R2 score to measure the goodness of fit
+c=>operation: Conclusions
+e=>end: End
 
-Data Encoding
-- Perform one-hot encoding for categorical variables
-- Standardize numerical features
+st->dc->remove_dup->handle_missing->fe->extract->create->de->one_hot->standardize->mt->nn->k_fold->mtune->hyperparams->architectures->meval->mse->r2->c->e
 
-Model Training
-- Utilize a neural network model with Keras and TensorFlow
-- Implement k-fold cross-validation for robust training
-
-Model Tuning
-- Experiment with different hyperparameters (e.g., learning rate, number of hidden layers)
-- Explore different model architectures (e.g., number of neurons per layer)
-
-Model Evaluation
-- Calculate Mean Squared Error (MSE) to assess prediction accuracy
-- Calculate R2 score to measure the goodness of fit
-
-Conclusions
-End
 
 ## Experimental Design
 
