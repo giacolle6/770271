@@ -36,7 +36,7 @@ The dataset contains the following variables:
 In this project, we employed a combination of data preprocessing, feature engineering, and machine learning techniques to predict track popularity. The following steps were taken:
 
 1. Data Exploration: We analyzed the provided dataset to understand its structure, variables, and potential correlations. We observed that the dataset contains information about music tracks, including track names, genres, artists, and popularity ratings.
-
+![heatmap](https://github.com/giacolle6/770271/assets/127773034/0df74c71-eb9b-4230-bf7b-a78faab5a165)
 2. Data Cleaning: We performed data cleaning to ensure the integrity and quality of the dataset. We removed any missing or irrelevant data points and handled duplicates. By cleaning the data, we ensured that our models are trained on reliable and accurate information.
 
 3. Feature Engineering: To enhance the predictive power of our models, we created additional features based on domain knowledge and statistical analysis. For example, we converted the track popularity variable into a binary variable, indicating whether a track is popular or not. We also derived artist popularity bins by grouping artists based on their average popularity ratings.
@@ -102,4 +102,4 @@ Include at least one placeholder figure and/or table for communicating your find
 In conclusion, our project aimed to predict the popularity of songs on Spotify using a neural network model. We began by cleaning the data, handling missing values and removing duplicates. Then, we engineered features such as genre and average artist popularity. We encoded the data and trained the model using Keras and TensorFlow. Our evaluation metrics indicated that the model performed well. The mean squared error and R2 score were both low, indicating that the model accurately predicted song popularity.
 
 However, our work leaves some questions unanswered, such as whether the model would perform well on a different dataset or with different features. Future work could explore these questions and also investigate the impact of other factors, such as lyrics and album art, on song popularity. Overall, our project highlights the potential of using machine learning to predict song popularity and paves the way for further research in this area.
-![heatmap](https://github.com/giacolle6/770271/assets/127773034/0df74c71-eb9b-4230-bf7b-a78faab5a165)
+
