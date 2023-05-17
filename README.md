@@ -84,10 +84,10 @@ graph TD
 
 We conducted several experiments to validate the target contribution(s) of the project. The main purpose of each experiment is as follows:
 
-###Experiment 1: 
+### Experiment 1: 
 To evaluate the performance of our baseline model, we trained a linear regression model using scikit-learn and compared its performance to our neural network model.
 
-###Experiment 2: 
+### Experiment 2: 
 To evaluate the impact of feature engineering, we trained our model on two different versions of the dataset: one with only the original features and another with the additional features we engineered.
 
 For both experiments, we used the MSE and R2 score as our evaluation metrics.
