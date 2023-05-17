@@ -58,7 +58,7 @@ To recreate the environment for this project, please follow these steps:
 
 ### Flowchart
 
-flowchart
+```flowchart
 st=>start: Start
 dc=>operation: Data Cleaning
 remove_dup=>subroutine: Remove duplicates
